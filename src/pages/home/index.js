@@ -1,47 +1,55 @@
 import React from 'react'
-import { push } from 'react-router-redux'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
-import { Button } from 'antd-mobile'
-import styles from './index.css'
-import {
-  increment,
-  incrementAsync,
-  decrement,
-  decrementAsync
-} from '../../store/modules/counter'
-const mapStateToProps = state => ({
-  count: state.counter.count,
-  isIncrementing: state.counter.isIncrementing,
-  isDecrementing: state.counter.isDecrementing
-})
+// import { Button } from 'antd-mobile'
+import './index.css'
+import card from './images/card.png'
+import photo from './images/default_photo.png'
+import msg from './images/ic_index_msg_open.png'
+import nav1 from './images/nav1.png'
+const Home = (props) => {
+  return (
+    <div className='pages'>
+      <header className='headtitle' >孕娘管家</header>
+      <section>
+        <img className='card' src={card} alt='卡片' />
+        <div className='user'>
+          <div className='username'>
+            <img src={photo} alt='' className='head' />
+            <div className='name'>
+              <p>郭靖</p>
+              <span>孕娘管家至尊会员</span>
+            </div>
+          </div>
+          <div className='usermsg'>
+            <img src={msg} alt='' />
+            <span>消息中心</span>
+          </div>
+        </div>
+        <div className='tit_tq'><span>私享特权</span></div>
+        <div className='tq_items'>
+          <div className='item'>
+            <img src={nav1} alt='' />
+            <p>更多特权</p>
+          </div>
+          <div className='item'>
+            <img src={nav1} alt='' />
+            <p>更多特权</p>
+          </div>
+          <div className='item'>
+            <img src={nav1} alt='' />
+            <p>更多特权</p>
+          </div>
+          <div className='item'>
+            <img src={nav1} alt='' />
+            <p>更多特权</p>
+          </div>
+          <div className='item'>
+            <img src={nav1} alt='' />
+            <p>更多特权</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-  increment,
-  incrementAsync,
-  decrement,
-  decrementAsync,
-  changePage: () => push('/about-us')
-}, dispatch)
-
-const Home = props => (
-  <div>
-    <h1>Home</h1>
-    <p>Count: {props.count}</p>
-    <Button onClick={props.increment} disabled={props.isIncrementing} type='primary'>Increment</Button>
-    <p>
-      <button onClick={props.incrementAsync} className={'button ' + styles.pages} disabled={props.isIncrementing}>Increment Async</button>
-    </p>
-
-    <p>
-      <button onClick={props.decrement} disabled={props.isDecrementing}>Decrement</button>
-      <button onClick={props.decrementAsync} disabled={props.isDecrementing}>Decrement Async</button>
-    </p>
-
-    <p><button onClick={() => props.changePage()}>Go to about page via redux</button></p>
-  </div>
-)
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Home)
+export default Home

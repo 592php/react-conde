@@ -1,3 +1,65 @@
+@charset "UTF-8";
+/* 颜色 */
+/* 基础布局 */
 .pages {
-  color: #000000;
-  width: 100px; }
+  background: #fff;
+  width: 100%;
+  flex: 1; }
+  .pages .headtitle {
+    height: 0.8rem;
+    background: #673b71;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; }
+  .pages section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .pages section .card {
+      width: 9.08rem;
+      padding: 10px; }
+    .pages section .user {
+      display: flex;
+      width: 90%;
+      justify-content: space-between;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 1.33333rem; }
+      .pages section .user .username {
+        display: flex; }
+        .pages section .user .username .head {
+          width: 1.33333rem;
+          height: 1.33333rem;
+          border-radius: 50%;
+          border: 1px solid #ffdb2b;
+          padding: 4px; }
+        .pages section .user .username .name p {
+          font-size: 20px;
+          color: #333; }
+        .pages section .user .username .name span {
+          color: #666;
+          font-size: 14px; }
+      .pages section .user .usermsg {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 13px; }
+        .pages section .user .usermsg img {
+          width: 1.33333rem; }
+    .pages section .tit_tq {
+      font-size: 16px;
+      text-align: left;
+      height: 2.26667rem;
+      line-height: 2.26667rem;
+      width: 100%;
+      color: #333; }
+      .pages section .tit_tq span {
+        padding-left: 40px; }
+    .pages section .tq_items {
+      width: 90%;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap; }
+      .pages section .tq_items .item {
+        width: 25%;
+        text-align: center; }
