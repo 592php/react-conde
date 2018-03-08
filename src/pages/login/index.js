@@ -4,6 +4,7 @@ import logo from '../../assets/images/logo.svg'
 import { connect } from 'react-redux'
 import { DECREMENT_REQUESTED, INCREMENT_REQUESTED } from '../../store/modules/login'
 import { NavBar, Icon,Button } from 'antd-mobile'
+//	<i class='iconfont  icon-msnui-tel user-icon'></i>
 const Login = props => {
 	// console.log(props, 'props')
 	let increment = () => {
@@ -21,7 +22,6 @@ const Login = props => {
       </NavBar>
       <div className='login'>
 				<div className='user'>
-					<i class='iconfont  icon-msnui-tel user-icon'></i>
            <input type="text" />
         </div>
         <div className='password'>
