@@ -7,8 +7,10 @@ import App from './pages/router'
 import './assets/css/App.css'
 render(
   <Provider store={store}>
-    <ConnectedRouter history={history} >
-      <App {...store} />
+    <ConnectedRouter history={history}>
+      <div>
+        <App />
+      </div>
     </ConnectedRouter>
   </Provider>,
   document.querySelector('#root')

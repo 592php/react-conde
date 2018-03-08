@@ -1,24 +1,35 @@
-export const GO_LOGIN = 'GO_LOGIN'
+export const DECREMENT_REQUESTED = 'DECREMENT_REQUESTED'
+export const INCREMENT_REQUESTED = 'INCREMENT_REQUESTED'
 
 export const actions = {
-  goLogin: (data) => {
+  decrement: () => {
     return {
-      type: GO_LOGIN,
+      type: DECREMENT_REQUESTED
+    }
+  },
+  increment: (data) => {
+    return {
+      type: INCREMENT_REQUESTED,
       data: data
     }
   }
 }
 const ACTION_HANDLERS = {
-  [GO_LOGIN]: (state, action) => {
-    console.log(state, 'state')
+  [DECREMENT_REQUESTED]: (state, action) => {
     return {
       ...state,
-      login: !state.login
+      count: --state.count
+    }
+  },
+  [INCREMENT_REQUESTED]: (state, action) => {
+    return {
+      ...state,
+      count: ++state.count
     }
   }
 }
 const initialState = {
-  login: false
+  count: 1
 }
 export default (state = initialState, action) => {
   const handler = ACTION_HANDLERS[action.type]
