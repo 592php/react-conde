@@ -46,6 +46,7 @@
      border-collapse: collapse;
      border-spacing: 0;
  }
+ 
  /* custom */
  a,a:link,a:visited,a:active,a:hover{
      color: #7e8c8d;
@@ -81,7 +82,6 @@
  
  html, body {
      width: 100%;
-     background: #f8f8f8;
  }
  
  body {
