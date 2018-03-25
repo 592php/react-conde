@@ -1,0 +1,22 @@
+
+ @import '../../assets/css/common.scss';
+ .nav-box {
+   z-index: 1;
+   width: 100%;
+   height: px2rem(100px);
+   line-height: px2rem(100px);
+   text-align: center;
+   background: #fff;
+   .nav-bar {
+     display: flex;
+     .nav-bar-item {
+       flex: 1;
+       font-size: 14px;
+       border-bottom: 1px solid #ddd;
+     }
+     .nav-bar-active {
+       border-bottom: 3px solid #76d49b;
+       color: #76d49b;
+     }
+   }
+ }

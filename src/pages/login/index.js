@@ -24,8 +24,7 @@ const Login = () => (
       </form>
     </div>
     <div className='forgets'>
-      <router-link to='' />
-      <router-link to='/register'>注册账号>></router-link>
+      <a href='/register'>注册账号>></a>
     </div>
   </div>
 )
