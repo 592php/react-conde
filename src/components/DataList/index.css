@@ -86,6 +86,9 @@ a.active {
   to {
     transform: translate3d(0, 0, 0); } }
 
+.minirefresh-wrap {
+  top: 1.44rem !important; }
+
 .scroll-list {
   background: #fff; }
   .scroll-list .posts-list {

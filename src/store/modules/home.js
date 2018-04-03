@@ -1,5 +1,7 @@
 export const CHANGE_TABS = 'CHANGE_TABS'
-export const GETLIST_DATA = 'GETLIST_DATA'
+export const PAGER_ESET = 'PAGER_ESET'
+export const ADD_PAGER = 'ADD_PAGER'
+export const SET_DATA = 'SET_DATA'
 export const actions = {
   changeTabs: (data) => {
     return {
@@ -7,9 +9,21 @@ export const actions = {
       data: data
     }
   },
-  getListData: (data) => {
+  setData: (data) => {
     return {
-      type: GETLIST_DATA,
+      type: SET_DATA,
+      data: data
+    }
+  },
+  pagerRest: (data) => {
+    return {
+      type: PAGER_ESET,
+      data: data
+    }
+  },
+  pagerAdd: (data) => {
+    return {
+      type: ADD_PAGER,
       data: data
     }
   }
@@ -21,19 +35,34 @@ const ACTION_HANDLERS = {
       tab: action.data
     }
   },
-  [GETLIST_DATA]: (state, action) => {
-  console.log(state,'state')
-  console.log(action,'action')
+  [PAGER_ESET]: (state, action) => {
     return {
       ...state,
-      datalist: action.data
+      currentPage: 1,
+      pageSize: 10
+    }
+  },
+  [ADD_PAGER]: (state, action) => {
+    return {
+      ...state,
+      currentPage: ++state.currentPage,
+      pageSize: 10
+    }
+  },
+  [SET_DATA]: (state, action) => {
+    let data = state.currentPage === 1 ?action.data:action.data.concat(state.data)
+    return {
+      ...state,
+      data: data
     }
   }
 }
 const initialState = {
-  tab: "all",
-  datalist: [],
-  navlist:[
+  tab: 'all', // 默认
+  data: [],
+  currentPage: 1,
+  pageSize: 10,
+  navlist: [
     {
       title: '全部',
       type: 'all'
