@@ -86,5 +86,8 @@ a.active {
   to {
     transform: translate3d(0, 0, 0); } }
 
-.navbar {
-  margin-bottom: 1.33333rem; }
+.minirefresh-scroll {
+  bottom: 1.33333rem; }
+
+.minirefresh-totop {
+  bottom: 1.86667rem; }

@@ -1,0 +1,58 @@
+@import '../../assets/css/common.scss';
+.tabars {
+    .tab {
+        position: fixed;
+        z-index: 666;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        width: 100%;
+        height: px2rem(100px);
+        line-height: px2rem(100px);
+        background: #fff;
+        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+        &:after {
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            border-top: 1px solid rgba(7, 17, 27, 0.1);
+            content: '';
+        }
+        .tab-item {
+            flex: 1;
+            text-align: center;
+            .router-link-active {
+                color: #0bd38a;
+                text-decoration: none;
+                i {
+                    color: #0bd38a;
+                }
+            }
+            a {
+                display: block;
+                font-size: 14px;
+                color: rgb(77, 85, 93);
+                &.active {
+                    color: #76d49b;
+                    text-decoration: none;
+                }
+                .tab-icon {
+                    width: px2rem(50px);
+                    height: px2rem(50px);
+                    margin: 0 auto;
+                    i {
+                        font-size: px2rem(40px);
+                        position: relative;
+                        top: px2rem(-15px);
+                    }
+                }
+                .tab-text {
+                    height: px2rem(60px);
+                    line-height: px2rem(60px);
+                }
+            }
+        }
+    }
+}

@@ -6,7 +6,7 @@ import React, { Component } from 'react'
 
 import 'minirefresh/dist/debug/minirefresh.css'
 import MiniRefreshTools from 'minirefresh'
-
+import './index.css'
 class Minirefresh extends Component {
   componentDidMount () {
     this.initMiniRefresh()

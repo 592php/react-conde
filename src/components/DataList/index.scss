@@ -1,78 +1,79 @@
 @import '../../assets/css/common.scss';
-.minirefresh-wrap{
-  top: px2rem(108px)!important;
+.minirefresh-wrap {
+    top: px2rem(108px) !important;
 }
+
 .scroll-list {
-  background: #fff;
-  .posts-list {
-    background-color: $white;
-    li {
-      padding: 10px $padding;
-      border-bottom: $border;
+    background: #fff;
+    .posts-list {
+        background-color: $white;
+        li {
+            padding: 10px $padding;
+            border-bottom: $border;
+        }
+        h3 {
+            @extend .title;
+            &:before {
+                content: attr(title);
+                margin-right: 10px;
+                margin-top: -3px;
+                @extend .tag;
+                color: $white;
+            }
+            &.top:before {
+                background: #e74c3c;
+            }
+            &.ask:before {
+                background: #3498db;
+            }
+            &.good:before {
+                background: #e67e22;
+            }
+            &.job:before {
+                background: #9b59b6;
+            }
+            &.share:before {
+                background: #1abc9c;
+            }
+            &.dev:before {
+                background: #5c32a9;
+            }
+            &.replies:before {
+                background: #1abc9c;
+            }
+            &.topics:before {
+                background: #5c32a9;
+            }
+        }
+        .content-t {
+            padding-top: 10px;
+            display: flex;
+        }
+        .avatar {
+            @extend .user-avatar;
+        }
+        .info {
+            display: block;
+            width: 100%;
+            flex: 1;
+        }
+        p {
+            padding: 3px 0;
+            display: flex;
+            color: $text;
+            font-size: $font-info;
+            &:first-child {
+                font-size: $font-content;
+            }
+            .name,
+            time:first-child {
+                display: block;
+                width: 100%;
+                flex: 1;
+            }
+            b {
+                color: #42b983;
+            }
+        }
     }
-    h3 {
-      @extend .title;
-      &:before {
-        content: attr(title);
-        margin-right: 10px;
-        margin-top: -3px;
-        @extend .tag;
-        color: $white;
-      }
-      &.top:before {
-        background: #e74c3c;
-      }
-      &.ask:before {
-        background: #3498db;
-      }
-      &.good:before {
-        background: #e67e22;
-      }
-      &.job:before {
-        background: #9b59b6;
-      }
-      &.share:before {
-        background: #1abc9c;
-      }
-      &.dev:before {
-        background: #5c32a9;
-      }
-      &.replies:before {
-        background: #1abc9c;
-      }
-      &.topics:before {
-        background: #5c32a9;
-      }
-    }
-    .content-t {
-      padding-top: 10px;
-      display: flex;
-    }
-    .avatar {
-      @extend .user-avatar;
-    }
-    .info {
-      display: block;
-      width: 100%;
-      flex: 1;
-    }
-    p {
-      padding: 3px 0;
-      display: flex;
-      color: $text;
-      font-size: $font-info;
-      &:first-child {
-        font-size: $font-content;
-      }
-      .name,
-      time:first-child {
-        display: block;
-        width: 100%;
-        flex: 1;
-      }
-      b {
-        color: #42b983;
-      }
-    }
-  }
 }

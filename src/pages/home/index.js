@@ -4,11 +4,12 @@ import { connect } from 'react-redux'
 import Homenav from '../../components/Homenav'
 import DataList from '../../components/DataList'
 import Loading from '../../components/Loading'
+import Footer from '../../components/footer'
 import {
   CHANGE_TABS,
   SET_DATA,
   PAGER_ESET,
-  ADD_PAGER,
+  ADD_PAGER
 } from '../../store/modules/home'
 import service from '../../api'
 class Home extends Component {
@@ -16,38 +17,38 @@ class Home extends Component {
     options: {
       container: '.minirefresh-wrap',
       up: {
-        isAuto: false,//是否直接翻页
+        isAuto: false, // 是否直接翻页
         loadFull: {
-          isEnable: true,
-        },
-      },
+          isEnable: true
+        }
+      }
     },
     listData: [],
     once: true,
-    isLoading: false,
+    isLoading: false
   }
   changeTab = type => {
     this.props.dispatch({
       type: CHANGE_TABS,
-      data: type,
+      data: type
     })
     this.createData(true)
   }
-  componentWillMount() {
+  componentWillMount () {
     this.createData()
   }
   onPullingDown = () => {
-    //上拉刷新
+    // 上拉刷新
     setTimeout(() => {
       this.createData(true)
       this.minirefresh.minirefresh.endDownLoading(true)
     }, 500)
   }
   onPullingUp = () => {
-    //下拉加载更多
+    // 下拉加载更多
     setTimeout(() => {
       this.props.dispatch({
-        type: ADD_PAGER,
+        type: ADD_PAGER
       })
       this.createData()
       let status = this.props.home.data % 10
@@ -55,36 +56,36 @@ class Home extends Component {
     }, 1000)
   }
   createData = isReset => {
-    //加载数据
+    // 加载数据
     if (isReset) {
       this.props.dispatch({
-        type: PAGER_ESET,
+        type: PAGER_ESET
       })
     }
     this.setState({
-      isLoading: true,
+      isLoading: true
     })
     let data = {
       page: this.props.home.currentPage,
       limit: this.props.home.pageSize,
-      tab: this.props.home.tab,
+      tab: this.props.home.tab
     }
     service.getList(data).then(res => {
       this.props.dispatch({
         type: SET_DATA,
-        data: res.data,
+        data: res.data
       })
       this.setState({
-        isLoading: false,
+        isLoading: false
       })
       return res.data
     })
     // return res
   }
-  render() {
+  render () {
     const { home } = this.props
     return (
-      <div className="navbar">
+      <div className='navbar'>
         <Homenav {...home} onClick={this.changeTab} />
         <DataList
           {...home}
@@ -96,13 +97,14 @@ class Home extends Component {
           options={this.state.options}
         />
         <Loading loading={this.state.isLoading} />
+        <Footer />
       </div>
     )
   }
 }
 const mapStateToProps = state => {
   return {
-    ...state,
+    ...state
   }
 }
 export default connect(mapStateToProps)(Home)

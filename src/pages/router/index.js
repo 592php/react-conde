@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom'
 import Home from '../home'
 import Detalies from '../detalies'
 import Login from '../login'
+
 const App = () => {
   return (
     <div className="apps">

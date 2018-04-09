@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import './index.css'
+import Footer from '../footer'
+
 import MiniRefresh from '../minirefresh'
 class DataList extends Component {
   render() {
@@ -46,31 +48,9 @@ class DataList extends Component {
             ))}
           </ul>
         </MiniRefresh>
+        <Footer/>
       </section>
     )
   }
 }
 export default DataList
-
-// <li v-for="item in datalist" :key="item.id">
-// <router-link :to="{name:'detailes',params:{id:item.id}}">
-// <h3 v-text="item.title" :className="getTabInfos(item.tab, item.good, item.top, true)" :title="getTabInfos(item.tab, item.good, item.top, false)">
-// </h3>
-// <div className="content-t">
-//   <img className="avatar" :src="item.author.avatar_url" />
-//   <div className="info">
-//     <p>
-//       <span className="name">{{item.author.loginname}}</span>
-//       <span className="status" v-if="item.reply_count > 0">
-//                   <b>{{item.reply_count}}</b>
-//                  /{{item.visit_count}}
-//                                       </span>
-//     </p>
-//     <p>
-//       <time>{{item.create_at | getLastTimeStr(true) }}</time>
-//       <time>{{item.last_reply_at |getLastTimeStr(true) }}</time>
-//     </p>
-//   </div>
-// </div>
-// </router-link>
-// </li>

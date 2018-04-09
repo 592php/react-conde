@@ -3,7 +3,7 @@ import './index.css'
 
 class Homenav extends Component {
   state = {
-    tab: 0,
+    tab: 0
   }
   changeTab = (item, index) => {
     console.log(item, 'index')
@@ -11,11 +11,11 @@ class Homenav extends Component {
     this.setState({ tab: index })
   }
 
-  render() {
+  render () {
     const { navlist, tab, onClick } = this.props
     return (
-      <div className="nav-box clearfix">
-        <ul className="nav-bar">
+      <div className='nav-box clearfix'>
+        <ul className='nav-bar'>
           {navlist.map((item, index) => {
             return (
               <li
